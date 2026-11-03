@@ -37,7 +37,6 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
-        String capital = "";
         for (int i = 0; i < sentence.length() - 2; i++) {
             if (sentence.substring(i, i + 1).equals(" ")) {
                if (!sentence.substring(i + 1, i + 2).equals(" ")) {
@@ -59,6 +58,9 @@ public class StringAlgorithms {
      */
     public static boolean detectPalindrome(String word) {
         // TODO: Implement this method
+        if (word.equalsIgnoreCase(reverseWord(word))) {
+            return true;
+        }
         return false;
     }
 
@@ -101,6 +103,7 @@ public class StringAlgorithms {
         System.out.println("\nTesting detectPalindrome:");
         // Example:
         // System.out.println(detectPalindrome("racecar"));
+        System.out.print(detectPalindrome("tacocat"));
 
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
