@@ -7,7 +7,11 @@ public class StringAlgorithms {
      */
     public static String printCharacters(String word) {
         // TODO: Implement this method
-        return "";
+        String lined = "";
+        for(int i = 0; i < word.length(); i++) {
+            lined = lined + word.substring(i, i + 1) + "\n";
+        }
+        return lined;
     }
 
 
@@ -18,7 +22,11 @@ public class StringAlgorithms {
      */
     public static String reverseWord(String word) {
         // TODO: Implement this method
-        return "";
+        String reversed = "";
+        for(int i = 0; i < word.length(); i++) {
+            reversed = reversed + word.substring((word.length() - i - 1), (word.length() - i));
+        }
+        return reversed;
     }
 
 
@@ -29,7 +37,18 @@ public class StringAlgorithms {
      */
     public static String capitalizeString(String sentence) {
         // TODO: Implement this method
-        return "";
+        String capital = "";
+        for (int i = 0; i < sentence.length() - 2; i++) {
+            if (sentence.substring(i, i + 1).equals(" ")) {
+               if (!sentence.substring(i + 1, i + 2).equals(" ")) {
+                  sentence = sentence.substring(0, i + 1) + sentence.substring(i + 1, i + 2).toUpperCase() + sentence.substring(i + 2, sentence.length());
+               }
+            }
+            else if (i == 0) {
+               sentence = sentence.substring(0, 1).toUpperCase() + sentence.substring(1);
+            }
+        }
+        return sentence;
     }
 
 
@@ -64,17 +83,20 @@ public class StringAlgorithms {
 
         // TODO: Add test calls for each challenge method
         
-        System.out.println("Testing printCharacters:");
+        System.out.println("\nTesting printCharacters:");
         // Example:
         // System.out.println(printCharacters("hello"));
+        System.out.print(printCharacters("Hello"));
 
         System.out.println("\nTesting reverseWord:");
         // Example:
         // System.out.println(reverseWord("hello"));
+        System.out.print(reverseWord("Hello"));
 
         System.out.println("\nTesting capitalizeString:");
         // Example:
         // System.out.println(capitalizeString("the quick brown fox"));
+        System.out.print(capitalizeString("hi, cats are really cool"));
 
         System.out.println("\nTesting detectPalindrome:");
         // Example:
