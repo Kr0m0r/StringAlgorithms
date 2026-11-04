@@ -73,6 +73,16 @@ public class StringAlgorithms {
      */
     public static char firstUniqueChar(String word) {
         // TODO: Implement this method
+        String first = "";
+        char letter;
+        String wordNoLetter = "";
+        for(int i = 0; i < word.length(); i++) {
+            letter = word.charAt(i);
+            wordNoLetter = word.substring(0, i) + word.substring(i + 1);
+            if (wordNoLetter.indexOf(letter) == -1) {
+               return letter;
+            }
+        }
         return ' ';
     }
 
@@ -108,5 +118,7 @@ public class StringAlgorithms {
         System.out.println("\nTesting firstUniqueChar:");
         // Example:
         // System.out.println(firstUniqueChar("swiss"));
+        System.out.print(firstUniqueChar("catcat"));
+
     }
 }
